@@ -511,6 +511,6 @@ function createWriteUI() {
 
     // 임시: 등록 눌렀을 때 동작
     submitBtn.addEventListener("click", () => {
-        alert("API 연동 후 글 등록이 구현됩니다!");
+        alert("글 업로드 중... (좀만 기다려봐 아직 테스트 섭이라 느림)");
     });
 }
