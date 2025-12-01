@@ -1,0 +1,52 @@
+.loginContainer {
+    padding: 0 20px;
+    margin-top: 80px;
+}
+
+.loginUpper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logoDiv {
+    color: var(--color_darkBlue);
+    font-size: var(--fontSize_ExtraLarge);
+    letter-spacing: -10px;
+    cursor: pointer;
+}
+.logoLine {
+    margin-bottom: -10px;
+    letter-spacing: -3px;
+}
+#logoLine1 {
+    font-weight: var(--fontWeight_ExtraLight);
+}
+#logoLine2 {
+    font-weight: var(--fontWeight_Bold);
+}
+#logoLine3, #logoline4 {
+    font-weight: var(--fontWeight_Light);
+}
+
+.loginUpper_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#loginInputDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+
+.loginLower {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}

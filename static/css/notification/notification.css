@@ -1,0 +1,326 @@
+.notificationWrap {
+    margin: 0 20px;
+    margin-top: 80px;
+    height: 80vh;
+}
+.notificationScrollArea {
+    width: 100%;
+}
+.notificationItems {
+
+    border-radius: 10px;
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* justify-content: space-between; */
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.8px);
+    -webkit-backdrop-filter: blur(7.8px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    margin-top: 20px;
+    padding: 15px;
+
+    height: 70vh;
+    overflow: auto;
+}
+
+.notificationUpper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.notificationTitle {
+    font-size: var(--fontSize_Large);
+    font-weight: var(--fontWeight_Light);
+    color: var(--color_white);
+    width: 80%;
+    transition: 0.1s ease-in-out;
+}
+.notificationTitle:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    border-radius: 10px;
+    transition: 0.1s ease-in-out;
+}
+.notificationBar {
+    height: 1px;
+    width: 100%;
+    background-color: var(--color_white);
+}
+.notificationList {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.notificationListWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-bottom: 1px solid var(--color_white);
+    padding-bottom: 20px;
+    transition: 0.1s ease-in-out;
+    cursor: pointer;
+}
+.notificationListWrap:hover {
+    background-color: rgba(0,0,0,0.3);
+    transition: 0.1s ease-in-out;
+    padding: 5px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+}
+.notificationListRow1 {
+    font-size: var(--fontSize_Medium);
+    color: var(--color_white);
+    font-weight: var(--fontWeight_Light);
+}
+.notificationListRow2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3px;
+    color: var(--color_white);
+    font-size: var(--fontSize_ExtraSmall);
+    font-weight: var(--fontWeight_ExtraLight);
+}
+.notificationListRow2_col1 {
+    display: flex;
+    gap: 10px;
+}
+
+.notificationContentWrap {
+    margin-top: 20px;
+    color: var(--color_white);
+    height: 100%;
+}
+.notificationTitleRow {
+    font-size: var(--fontSize_Medium);
+    font-weight: var(--fontWeight_Medium);
+    margin-bottom: 10px;
+}
+.notificationMetaRow {
+    display: flex;
+    margin-top: 5px;
+    gap: 5px;
+}
+.notificationBody {
+    margin-top: 10px;
+    font-size: var(--fontSize_Small);
+    font-weight: var(--fontWeight_ExtraLight);
+    line-height: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.notificationDivider {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--color_white);
+    display: flex;
+    justify-content: space-between;
+}
+.notificationDividerRight {
+    display: flex;
+    gap: 5px;
+}
+.notificationCommentWrap {
+    margin-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.5);
+}
+.notificationCommentDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.notificationCommentLineFirstRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.notificationCommentLineFirstRowLeft {
+    display: flex;
+    gap: 10px;
+    font-size: var(--fontSize_Small);
+    font-weight: var(--fontWeight_Medium);
+}
+.notificationCommentLineFirstRowRight {
+    display: flex;
+    gap: 10px;
+}
+.notificationCommentLineFirstRowRight .gridIconRow_el {
+    display: flex;
+    gap: 5px;
+}
+.notificationCommentLineWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+#notificationCommentLike {
+    display: flex;
+}
+.notificationCommentLineSecondRow {
+    display: flex;
+    font-size: var(--fontSize_ExtraSmall);
+    font-weight: var(--fontWeight_ExtraLight);
+}
+
+.notificationCommentSendBtn {
+    background-image: url('/static/img/sendBtn.svg');
+    transition: 0.1s ease-in-out;
+    width: 39px;
+    height: 33px;
+}
+.notificationCommentSendBtn:hover {
+    background-image: url('/static/img/sendBtn_active.svg');
+    transition: 0.1s ease-in-out;
+    width: 39px;
+    height: 33px;
+}
+
+.notificationCommentInputWrap {
+    border: 1px solid;
+    position: sticky;
+    /* bottom: 10px; */
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(7.8px);
+}
+.notificationCommentInput {
+    width: 80%;
+    background-color: transparent;
+    border: none;
+    color: var(--color_white);
+}
+.notificationCommentInput::placeholder {
+    color: var(--color_white);
+    font-size: var(--fontSize_ExtraSmall);
+    font-weight: var(--fontWeight_ExtraLight);
+}
+
+
+
+#notificationWriteTxt {
+    width: fit-content;
+    position: sticky;
+    bottom: 15px;
+    opacity: 0.5;
+    box-shadow: 0 10px 10px rgba(255, 255, 255, 0.5);
+    transition: 0.1s ease-in-out;
+    cursor: pointer;
+}
+#notificationWriteTxt:hover {
+    opacity: 1;
+    transition: 0.1s ease-in-out;
+}
+
+/* 스크롤되는 영역 */
+.notificationScrollArea {
+    width: 100%;
+    height: calc(70vh - 60px);
+    overflow-y: auto;
+    padding-bottom: 80px; /* 입력창 공간 확보 */
+}
+
+/* 댓글 입력창은 scrollArea 바깥에 있어야 한다 */
+.notificationCommentInputWrap {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    height: 48px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin-top: 10px;
+    z-index: 20;
+}
+
+
+
+
+.notificationWriteWrap {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notificationWriteTitle {
+    width: 100%;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.notificationWriteBody {
+    width: 100%;
+    /* height: 300px; */
+    min-height: 400px;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    line-height: 1.4;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.notificationWriteTitle::placeholder,
+.notificationWriteBody::placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+.notificationWriteBtnLine {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.notificationWriteSubmitBtn,
+.notificationWriteCancelBtn {
+    padding: 10px 16px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: var(--fontSize_Small);
+    font-weight: var(--fontWeight_ExtraLight);
+}
+
+.notificationWriteSubmitBtn:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+.notificationWriteCancelBtn:hover {
+    background: rgba(255,255,255,0.25);
+}

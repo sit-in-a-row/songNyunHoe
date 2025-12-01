@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+  <title>KULSOM_LOGIN</title>
+</head>
+<body>
+
+  
+  <div id="mainContainer"></div>
+  <div id="typWrap">
+  </div>
+
+  <script type="module">
+	
+	function resizeMainWrap() {
+		const mainWrap = document.getElementById("mainContainer");
+		if (!mainWrap) return;
+
+		const height = window.innerHeight;
+		const width = window.innerWidth;
+
+		// 모바일 기기 감지 (가로 < 세로인 경우)
+		const isMobile = /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent)
+							|| height > width;
+
+		if (isMobile) {
+			// 📱 모바일: 화면에 꽉 차도록 조정
+			mainWrap.style.width = width + "px";
+			mainWrap.style.height = height + "px";
+		} else {
+			// 💻 PC: 9:16 비율 유지
+			const adjustedWidth = (height * 9) / 16;
+			mainWrap.style.height = height + "px";
+			mainWrap.style.width = adjustedWidth + "px";
+		}
+	}
+
+    resizeMainWrap();
+    window.addEventListener("resize", resizeMainWrap);
+
+	import { initLogin } from '/static/js/login/login.js'
+
+	// 이미 로그인 캐시가 있으면 바로 /main 으로
+	(function autoRedirectIfCached() {
+		const authed = sessionStorage.getItem("auth");
+		const path = window.location.pathname;
+
+		// 로그인 페이지에서는 redirect 금지
+		const isLoginPage = (path === "/" || path === "/login" || path === "/login.html");
+
+		if (authed === "true" && !isLoginPage) {
+			location.replace("/main");
+		}
+	})();
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Main</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+    <!-- <main class="wrap">
+    <h1>메인 화면</h1>
+    <p id="hello"></p>
+    <p class="sub">Notion page_id: <span id="pid"></span></p>
+
+    <button id="logoutBtn">로그아웃</button>
+    </main> -->
+
+    <div id="mainContainer"></div>
+    <div id="typWrap">
+    </div>
+
+
+
+  <script type="module" src="/static/js/index.js"></script>
+  <script>
+    	function resizeMainWrap() {
+          const mainWrap = document.getElementById("mainContainer");
+          if (!mainWrap) return;
+
+          const height = window.innerHeight;
+          const width = window.innerWidth;
+
+          // 모바일 기기 감지 (가로 < 세로인 경우)
+          const isMobile = /Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent)
+                    || height > width;
+
+          if (isMobile) {
+            // 📱 모바일: 화면에 꽉 차도록 조정
+            mainWrap.style.width = width + "px";
+            mainWrap.style.height = height + "px";
+          } else {
+            // 💻 PC: 9:16 비율 유지
+            const adjustedWidth = (height * 9) / 16;
+            mainWrap.style.height = height + "px";
+            mainWrap.style.width = adjustedWidth + "px";
+          }
+          }
+
+        resizeMainWrap();
+        window.addEventListener("resize", resizeMainWrap);
+  </script>
+
+  <!-- <script>
+    // // 세션 캐시 없으면 로그인 페이지로
+    // (function guard() {
+    //     if (sessionStorage.getItem("auth") !== "true") {
+    //     location.replace("/");
+    //     }
+    // })();
+
+    // // localStorage에서 유저 정보 읽어 표시
+    // (function hydrateUserInfo() {
+    //     const name = localStorage.getItem("user_name") || "(이름 없음)";
+    //     const pageId = localStorage.getItem("page_id") || "(없음)";
+    //     document.getElementById("hello").textContent = `안녕하세요, ${name} 님!`;
+    //     document.getElementById("pid").textContent = pageId;
+    // })();
+
+    // // 로그아웃 (로컬스토리지 + 세션스토리지 캐시 제거)
+    // document.getElementById("logoutBtn").addEventListener("click", () => {
+    //     sessionStorage.removeItem("auth");     // 브라우저 세션 캐시 제거
+    //     localStorage.removeItem("user_name");
+    //     localStorage.removeItem("page_id");
+    //     location.replace("/");
+    // });
+  </script> -->
+</body>
+</html>

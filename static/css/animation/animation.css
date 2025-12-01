@@ -1,0 +1,22 @@
+/* 실제 픽셀 단위 거리 기반 무한 루프 */
+@keyframes scrollLoopPx {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(calc(-1 * var(--moveDist))); }
+}
+  
+@keyframes scrollLoopPxReverse {
+    0%   { transform: translateX(calc(-1 * var(--moveDist))); }
+    100% { transform: translateX(0); }
+}
+
+/* 무한 루프용 키프레임 (왼쪽으로 계속 흘러감) */
+@keyframes scrollLoop {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* 2배 복제된 전체의 절반 이동 */
+}
+  
+@keyframes scrollLoopReverse {
+    0%   { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+    
