@@ -10,8 +10,14 @@ from flask_utils import *
 
 load_dotenv()
 
-# ✅ static 설정을 명시
-app = Flask(__name__, static_folder="static", static_url_path="/static")
+# static 설정을 명시
+# app = Flask(__name__, static_folder="static", static_url_path="/static")
+app = Flask(
+    __name__,
+    template_folder="../templates",
+    static_folder="../static",
+    static_url_path="/static",
+)
 
 # =========================
 # Notion 설정 (환경변수)
@@ -781,9 +787,3 @@ def catch_all(subpath):
     # 그 외는 모두 index.html 로 SPA 라우팅
     print("  → SPA 라우팅: index.html 렌더")
     return render_template("index.html")
-
-# =========================
-# 앱 구동
-# =========================
-# if __name__ == "__main__":
-#     app.run(debug=True)
