@@ -91,17 +91,11 @@ function createGridItem(id, label, imgSrc) {
             })
             break;
 
-        default:
+        case "addGames":
             root.addEventListener("click", () => {
-                alert("당일날 되면 오픈합니다 ㅎㅎ");
+                navigate('addGames');
             })
             break;
-
-        // case "addGames":
-        //     root.addEventListener("click", () => {
-        //         navigate('addGames');
-        //     })
-        //     break;
 
     }
 
@@ -187,6 +181,7 @@ async function infoToGrid(type) {
         case 'anon':
             data = await fetchAnonInfo();
             break;
+        
         default:
             console.log('[main.js] infoToGrid: Unknown type', type);
             return;

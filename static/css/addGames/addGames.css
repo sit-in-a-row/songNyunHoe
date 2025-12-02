@@ -55,3 +55,54 @@
     width: 100%;
     background-color: var(--color_white);
 }
+.addGamesInputsWrap {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    gap: 15px;
+}
+
+#addGamesInputTitle {
+    height: 20px;
+}
+#addGamesInputDesc {
+    height: 250px;
+}
+.addGamesInputTitle, .addGamesInputDesc {
+    background-color: var(--color_white);
+    border: none;
+    /* color: var(--color_white); */
+    padding: 10px;
+    border-radius: 10px;
+}
+.addGamesInputTitle::placeholder, .addGamesInputDesc::placeholder {
+    color: var(--color_grey);
+    font-size: var(--fontSize_ExtraSmall);
+    font-weight: var(--fontWeight_ExtraLight);
+}
+#addGamesConfirm {
+    align-self: center;
+}
+.addGamesIsSpeed {
+    display: flex;
+    background-color: var(--color_white);
+    padding: 5px;
+    border-radius: 10px;
+    justify-content: space-between;
+    color: var(--color_grey);
+    font-size: var(--fontSize_Small);
+    font-weight: var(--fontWeight_ExtraLight);
+    width: max-content;
+    gap: 10px;
+    align-items: center;
+    align-self: center;
+    cursor: pointer;
+}
+.addGamesIsSpeedEl {
+    padding: 5px 10px;
+}
+.addGamesIsSpeed .toggled {
+    background-color: var(--color_grey);
+    color: var(--color_white);
+    border-radius: 5px;
+}

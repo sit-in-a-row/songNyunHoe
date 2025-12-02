@@ -192,10 +192,35 @@ async function fetchNotificationList(scrollArea) {
     return list;
 }
 
+
+
 /********************************************************************
  * 상세 페이지 로드
  ********************************************************************/
 function loadNotificationDetail(item, res) {
+
+    function createUrlPreview(url) {
+        const wrap = document.createElement("div");
+        wrap.className = "urlPreviewWrap";
+    
+        wrap.innerHTML = `
+            <div class="urlPreviewBox">
+                <div class="urlPreviewFavicon">
+                    <img src="https://www.google.com/s2/favicons?sz=64&domain_url=${url}" />
+                </div>
+                <div class="urlPreviewInfo">
+                    <div class="urlPreviewTitle">${url}</div>
+                    <div class="urlPreviewDomain">${(new URL(url)).hostname}</div>
+                </div>
+            </div>
+        `;
+    
+        wrap.addEventListener("click", () => {
+            window.open(url, "_blank");
+        });
+    
+        return wrap;
+    }
 
     // ② 상세페이지 들어오면 글쓰기 버튼 삭제
     const writeBtn = document.getElementById("notificationWriteTxt");
@@ -237,11 +262,35 @@ function loadNotificationDetail(item, res) {
     (res.blocks || []).forEach((b) => {
         if (b.type === "paragraph") {
             const p = createElement("div", "notificationBodyEl");
-            p.innerText = b.text;
+    
+            const raw = b.text || "";
+            const urlRegex = /(https?:\/\/[^\s<]+)/g;
+    
+            // 줄바꿈 적용
+            let html = raw.replace(/\n/g, "<br>");
+            console.log(html);
+    
+            // URL을 <a> 태그로 변환
+            let urls = [];
+            html = html.replace(urlRegex, (url) => {
+                urls.push(url);
+                return `<a href="${url}" target="_blank" class="detectedLink">${url}</a>`;
+            });
+    
+            p.innerHTML = html;
             body.appendChild(p);
+    
+            // URL 썸네일 생성
+            if (urls.length > 0) {
+                urls.forEach((url) => {
+                    const preview = createUrlPreview(url);
+                    p.appendChild(preview);  
+                });
+            }
         }
     });
-
+    
+    
     /*******************
      * 글 좋아요
      *******************/
@@ -511,6 +560,6 @@ function createWriteUI() {
 
     // 임시: 등록 눌렀을 때 동작
     submitBtn.addEventListener("click", () => {
-        alert("글 업로드 중... (좀만 기다려봐 아직 테스트 섭이라 느림)");
+        alert("API 연동 후 글 등록이 구현됩니다!");
     });
 }

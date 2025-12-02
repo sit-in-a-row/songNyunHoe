@@ -57,6 +57,9 @@ input {
     border: none;
 }
 
+textarea {
+    resize: none;
+}
 
 .button_normal {
     background-color: var(--color_darkBlue);
@@ -83,7 +86,7 @@ input {
   }
 
 #mainContainer {
-    /* border: 1px solid; */
+    border: 1px solid;
 }
 
 #main_banner {
