@@ -91,11 +91,17 @@ function createGridItem(id, label, imgSrc) {
             })
             break;
 
-        case "addGames":
+        default:
             root.addEventListener("click", () => {
-                navigate('addGames');
+                alert("당일에 오픈합니다 ㅎㅎ");
             })
             break;
+
+        // case "addGames":
+        //     root.addEventListener("click", () => {
+        //         navigate('addGames');
+        //     })
+        //     break;
 
     }
 
